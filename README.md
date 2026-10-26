@@ -13,18 +13,17 @@ Build a support agent that resolves returns, billing disputes and account proble
 
 ## Set up
 
-1. Python 3.11 or newer, then in this folder:
-   ```bash
-   python -m venv .venv && source .venv/bin/activate
-   pip install -e ".[dev]"
-   ```
-2. Copy `.env.example` to `.env` and add your Anthropic API key. Never commit `.env` (it is already in `.gitignore`).
-3. In Claude Code: add the CCA Prep Studio plugin (see the capstone page in the app) and connect Claude Code from the step page, so it can read your step and report your progress.
-4. Run `/cca-prep-studio:next-step` in Claude Code to begin.
+CCA Prep Studio walks you through set up with pictures (open the capstone and choose **Set up**). In short:
+
+1. Make your own copy of this starter on GitHub (Public), and open it in your code editor.
+2. Install Claude Code, connect it to CCA Prep Studio, and add the CCA Prep Studio plugin (the app shows the commands).
+3. In this folder, start `claude` and run `/cca-prep-studio:next-step`. The first time, Claude Code checks you have Python 3.11 or newer and installs the project's packages into `.venv`.
+
+You don't need an Anthropic API key for the step tests. When you want to talk to your agent for real, copy `.env.example` to `.env` and add your key. Never commit `.env` (it is already in `.gitignore`).
 
 ## How a step counts
 
-1. Build the step until its tests pass: `pytest tests/test_step1_loop.py`.
+1. Build the step until its tests pass: `.venv/bin/pytest tests/test_step1_loop.py`.
 2. Push. GitHub Actions runs every step's tests (`.github/workflows/capstone.yml`, jobs `step-1` … `step-6`).
 3. In CCA Prep Studio, answer the step's question in your own words.
 
@@ -35,7 +34,7 @@ When the tests pass on GitHub and your answer scores 70 or more, the step is ver
 After step 1 you can talk to it (it calls Claude with your key):
 
 ```bash
-python -m support_agent.app
+.venv/bin/python -m support_agent.app
 ```
 
 The tests never call Claude: they use a scripted stand-in (`tests/fakes.py`), so they are free and give the same result every time.
