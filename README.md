@@ -31,6 +31,10 @@ When the tests pass on GitHub and your answer scores 70 or more, the step is ver
 
 ## Try your agent
 
+In Claude Code, `/cca-prep-studio:console` opens the Support Console in your browser: send prompts as a customer, break a tool on purpose, see every tool call behind the scenes, and run a step's tests with plain-words results. Practice mode needs no API key.
+
+### In the terminal
+
 After step 1 you can talk to it (it calls Claude with your key):
 
 ```bash
