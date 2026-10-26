@@ -14,6 +14,7 @@ This repo is a guided capstone project. The learner is preparing for the Claude 
 - Never read, print or commit `.env` or any key.
 - Run only that step's tests while working: `.venv/bin/pytest tests/test_stepN_*.py` (the `/cca-prep-studio:next-step` command sets up `.venv` the first time).
 - Explain in plain words, and tie each change to its exam task (shown in each file's docstring).
+- Comments that teach: above each part you write or change, a short header with the step, the exam task and what the part does (`# Step 1 · Task 1.1: stop on stop_reason, never on the reply's text`), and one plain line of why beside each decision the tests check. In "I write the code", the learner writes them and you review. After each change, say which file and commented sections to read and what they should show.
 
 ## When a step's tests pass
 1. Call `report_step` with the scenario `customer-support` and the step number.
